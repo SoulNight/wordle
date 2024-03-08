@@ -1,0 +1,112 @@
+
+/* Sets up the header as a flex container to align its children horizontally, centers content, and establishes it as a relative positioning context for its absolutely positioned children. */
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  position: relative;
+}
+
+/* Positions the material symbol icons absolutely within the header; their exact positions will be defined in subsequent rules. */
+header .material-symbols-outlined {
+  position: absolute;
+}
+
+/* Positions the first icon (menu) 10 pixels from the left of the header. */
+header .material-symbols-outlined:first-child {
+  left: 10px;
+}
+
+/* Positions the third icon (help) 100 pixels from the right of the header, ensuring it doesn't overlap with the equalizer icon. */
+header .material-symbols-outlined:nth-child(3) {
+  right: 100px; 
+}
+
+/* Positions the fourth icon (equalizer) 50 pixels from the right of the header, ensuring it doesn't overlap with the settings icon. */
+header .material-symbols-outlined:nth-child(4) {
+  right: 50px; 
+}
+
+/* Positions the last icon (settings) 10 pixels from the right of the header. */
+header .material-symbols-outlined:last-child {
+  right: 10px;
+}
+
+/* Defines the options container with an absolute position and a right offset, with space between its children. */
+.options {
+  position: absolute; 
+  right: 10px;
+  display: flex;
+  gap: 10px;
+}
+
+/* Sets up the keyboard container with vertical stacking of rows, central alignment, and spacing between rows. */
+.keyboard-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Styles each row of the keyboard to lay out keys horizontally, centered with space between them. */
+.keyboard-row {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+
+/* Styles for individual keys to have padding, no margin, and to grow and shrink as needed. */
+.key {
+  padding: 10px;
+  margin: 0;
+  flex: 0 1 auto;
+}
+
+/* Makes the 'Enter' and 'Del' keys wider than the other keys. */
+.key.enter, .key.del {
+  flex-grow: 2;
+}
+
+/* Sets up the letter grid with wrapping items, a maximum width, centered items, and space between letters. */
+.letter-grid {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 300px;
+  margin: auto;
+  gap: 5px;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+/* Styles for each guess letter box to align content centrally, with a defined size and border. */
+.guess {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border: 1px solid #ddd;
+  font-size: 2em;
+}
+
+/* Background colors for the guess letter box based on the guess status: wrong, correct, or almost correct. */
+.guess.wrong {
+  background-color: grey;
+  color: black;
+}
+
+.guess.correct {
+  background-color: rgb(77, 189, 133);
+  color: white;
+}
+
+.guess.almost {
+  background-color: rgb(205, 200, 50);
+  color: white;
+}
+
+.key.used {
+  background-color: #919290; 
+  color: black;
+}
